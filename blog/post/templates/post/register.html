@@ -1,0 +1,28 @@
+{% extends 'post/base.html' %}
+
+{% block tittle %}
+ Register
+{% endblock %}
+
+{% block name %}
+    Register
+{% endblock %}
+
+{% block body %}
+<div class="body-conatiner">
+<form  action="../api/auth/users/" method="post">
+            {% csrf_token %}
+            <div class="input-div">
+                <label for="username">Username:</label>
+                <input type="text" name="username" class="input-text" required>
+            </div>
+            <div class="input-div">
+                <label for="password">Password:</label>
+                <input type="password" name="password" required>
+            </div>
+             <button type="submit">Отправить</button>
+</form>
+    </div>
+
+</body>
+{% endblock %}

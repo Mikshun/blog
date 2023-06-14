@@ -1,0 +1,43 @@
+{% extends 'post/base.html' %}
+{% load static %}
+
+{% block title %}
+  Posts list
+{% endblock %}
+
+{% block name %}
+            Блог
+{% endblock %}
+
+{% block body %}
+  {% if posts %}
+    <div class="body-conatiner">
+      <h1 class="preview">Posts:</h1>
+    {% for single_post in posts %}
+        <div class="post-list">
+        <a href="{% url 'post_detail' pk=single_post.pk %}" class="h2-link"><h2>Title: {{ single_post.title }}</h2></a>
+        <h3>Author: {{ single_post.author }}</h3>
+      </div>
+    {% endfor %}
+    </div>
+
+  {% else %}
+    <h3>No posts yet</h3>
+  {% endif %}
+
+    {% if request.user.is_staff %}
+        <form  action="../api/" method="post">
+            <h2>Создать Пост</h2>
+            {% csrf_token %}
+            <div class="input-div">
+                <label for="title">Заголовок</label>
+                <input type="text" name="title" required>
+            </div>
+            <div class="input-div">
+                <label for="description">Описание</label>
+                <input type="text" name="description" required>
+            </div>
+             <button type="submit">Отправить</button>
+        </form>
+    {% endif %}
+{% endblock %}

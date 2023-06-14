@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block tittle %}
+            Base Title
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'post/css/normalize.css'  %}">
+    <link rel="stylesheet" href="{% static 'post/css/list.css'  %}">
+</head>
+<body class="container-module">
+<div class="header">
+    <header class="flex-header">
+        <div class="header-div">
+            <h1>
+                {% block name %}
+                    Base Title
+                {% endblock %}
+            </h1>
+        </div>
+        {% if request.user.is_authenticated %}
+        <div class="link">
+            <a href="/api/auth/logout" class="link-auth">Выход</a>
+        </div>
+        {% else %}
+        <div class="link">
+            <ul class="link-list">
+                <li>
+                    <a href="/api/auth/login" class="link-auth">Вход</a>
+                </li>
+                <li>
+                    <a href="register" class="link-auth">Регистрация</a>
+                </li>
+            </ul>
+        </div>
+        {% endif %}
+    </header>
+</div>
+
+{% block body %}
+    Base Body
+{% endblock %}
+</body>
+</html>

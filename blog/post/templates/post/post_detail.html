@@ -1,0 +1,41 @@
+{% extends 'post/base.html' %}
+
+{% block tittle %}
+ Post  #{{ object.pk }} details
+{% endblock %}
+
+{% block name %}
+    Детали Поста  #{{ object.pk }}
+{% endblock %}
+{% block body %}
+<a href="/blog/" class="h2-link"><h1>Post: {{ object.title }}</h1></a>
+    <h1>Author: {{object.author}}</h1>
+    <div class="description">
+          Post text: {{object.description}}
+    </div>
+     <div>
+         <h2>Comments:</h2>
+         {% if object.comments.all %}
+            {% for comment in object.comments.all %}
+            <div class="comment-div">
+                <h3>Author: {{comment.author}}</h3>
+                <p class="description">Comment text: {{comment.text}}</p>
+            </div>
+            {% endfor %}
+         {% else %}
+         <p> No comments yet </p>
+         {% endif %}
+     </div>
+ {% if request.user.is_authenticated %}
+        <form  action="../api/comment/" method="post">
+            {% csrf_token %}
+            <h2>Создать Комментарий</h2>
+            <div>
+                <label for="text">Текст</label>
+                <input type="text" name="text" required>
+                <input type="hidden"  name="post" value="{{ object.pk }}">
+            </div>
+             <button type="submit">Отправить</button>
+        </form>
+    {% endif %}
+{% endblock %}
