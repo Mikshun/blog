@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block name %}
-    Register
+    Регистрация
 {% endblock %}
 
 {% block body %}
@@ -13,11 +13,11 @@
 <form  action="../api/auth/users/" method="post">
             {% csrf_token %}
             <div class="input-div">
-                <label for="username">Username:</label>
+                <label for="username">Логин:</label>
                 <input type="text" name="username" class="input-text" required>
             </div>
             <div class="input-div">
-                <label for="password">Password:</label>
+                <label for="password">Пароль:</label>
                 <input type="password" name="password" required>
             </div>
              <button type="submit">Отправить</button>
