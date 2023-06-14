@@ -13,6 +13,9 @@
 
 ![image](https://github.com/Mikshun/blog/assets/112958312/7f5413b4-333d-451c-aab6-27fe87b543ff)
 
+![image](https://github.com/Mikshun/blog/assets/112958312/d05a765e-f725-4585-8046-46ccdf75e541)
+
+
 ## Инструкция к установке
 + Скачать репозиторий можно при помощи команды:
   ```bash 
