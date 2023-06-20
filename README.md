@@ -21,4 +21,10 @@
   ```bash 
   git clone https://github.com/Mikshun/blog
   ```
++ Перейти в корневую папку проекта
+
++ Установить зависимости при помощи команды:
+  ```bash 
+  pip install reqierements.txt
+  ```
 + Запустить файл main.py
