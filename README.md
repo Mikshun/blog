@@ -2,18 +2,28 @@
 ## Описание
 В данном проекте реализован весь функционал тестового задания: https://github.com/StalkerRaftik/business_shell_test/, 
 переход на детали поста осуществляется нажатием на его заголовок.
+Фронт составляющая реализовна на vue.js и работает отдельно от бека, отслыая запросу к апи написанному на rest.
+Для корректной работы, для фронт энда используется порт 8080 а для бека 8000.
+Кнопка подгрузки авторизации и постов вынесена в отдельный функционал.
+Так же в папке фронтэнд ест базовые инструкции к установке и запусу преокта на vue.
+Для меня это первое знакомство со vue, так что не обошлось без грубых недочетов,как я считаю. Один из них это неопходимость подгрузки данных по кнопке (в том числе и аутентификации)
 ## Скрины работающего сервиса
-![image](https://github.com/Mikshun/blog/assets/112958312/dda9fef6-01d8-4c22-8c6f-20a3093ee3e0)
 
-![image](https://github.com/Mikshun/blog/assets/112958312/de51e9cd-4841-4845-8d0d-511c85469d55)
+![image](https://github.com/Mikshun/blog/assets/112958312/d1a7ef5c-86f3-4494-9aab-83baa5219617)
 
-![image](https://github.com/Mikshun/blog/assets/112958312/2a72fba1-1eb9-4b86-853a-370332cfcd97)
+![image](https://github.com/Mikshun/blog/assets/112958312/0531b54d-0503-481a-887b-1c2700750444)
 
-![image](https://github.com/Mikshun/blog/assets/112958312/d63d0805-5df2-43ae-8c80-71abe91dc784)
+![image](https://github.com/Mikshun/blog/assets/112958312/6aaffda0-f6da-44f3-a383-d7756e5906ce)
 
-![image](https://github.com/Mikshun/blog/assets/112958312/7f5413b4-333d-451c-aab6-27fe87b543ff)
+![image](https://github.com/Mikshun/blog/assets/112958312/36609043-e83e-4be7-9c73-dabc686cda99)
 
-![image](https://github.com/Mikshun/blog/assets/112958312/d05a765e-f725-4585-8046-46ccdf75e541)
+![image](https://github.com/Mikshun/blog/assets/112958312/a9a1f8e2-6d58-4718-b3a7-8afdd4b80533)
+
+![image](https://github.com/Mikshun/blog/assets/112958312/06095b9c-e889-49dc-8982-a190b20d98fe)
+
+![image](https://github.com/Mikshun/blog/assets/112958312/5d7a45b3-7380-4274-9a7d-8386164c67ae)
+
+
 
 
 ## Инструкция к установке
