@@ -5,7 +5,7 @@ from post.models import Post, Comment
 from rest_framework.relations import StringRelatedField
 
 class CommentSerializers(serializers.ModelSerializer):
-    author = serializers.ReadOnlyField(source='owner.username')
+    author = StringRelatedField()
 
     class Meta:
         model = Comment
@@ -20,14 +20,14 @@ class PostDetailsSerializers(serializers.ModelSerializer):
         fields = 'title', 'author', 'description', 'comments'
 
 class CreatePost(serializers.ModelSerializer):
-    author = serializers.ReadOnlyField(source='owner.username')
+    author = StringRelatedField()
 
     class Meta:
         model = Post
-        fields = 'title', 'author', 'description'
+        fields = 'pk', 'title', 'author', 'description'
 
 class CreateCommentSerializers(serializers.ModelSerializer):
-    author = serializers.ReadOnlyField(source='owner.username')
+    author = serializers.StringRelatedField()
     class Meta:
         model = Comment
         fields = 'author', 'text', 'post'
