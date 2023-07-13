@@ -5,9 +5,9 @@
       Создать Комментарий
     </my-button>
     <my-dialog v-model:show="dialogVisible">
-      <commentform>
-        @create="createComment"
-      </commentform>
+      <commentform
+          @create="UpdatePage"
+      />
     </my-dialog>
     <my-button @click.stop="UpdatePage">
       Подгрузить комментарии
@@ -52,7 +52,8 @@ export default {
     }
   },
   methods: {
-    UpdatePage() {
+    UpdatePage(first) {
+      console.log(first);
       const response = axios.get('http://127.0.0.1:8000/api/comment/', {
         headers: {
           Authorization: store.state.token
@@ -69,6 +70,11 @@ export default {
     },
     showDialog() {
       this.dialogVisible = true;
+    },
+    watch: {
+      dialogVisible(newvalue) {
+        console.log(newvalue)
+      }
     }
   },
   setup(props) {

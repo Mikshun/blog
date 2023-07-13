@@ -45,6 +45,7 @@ export default {
       }
       finally {
         this.comment.body = ''
+        this.$emit('create', 'успех')
       }
     }
   },
